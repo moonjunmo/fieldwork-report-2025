@@ -1,0 +1,83 @@
+% !TEX root = main.tex
+\documentclass{snu-fl-report}
+
+% Use `\includeonly` to compile partially, e.g.,
+% \includeonly{introduction}
+
+% Hangul font setup
+\setmainhangulfont{KoPubWorldBatang_Pro}[
+  Script=Hangul,
+  Renderer=OpenType,
+  Scale = MatchUppercase,
+  UprightFont={* Light},
+  BoldFont={* Bold},
+  AutoFakeSlant = 0.15
+]
+\setsanshangulfont{KoPubWorldDotum_Pro}[
+  Scale = MatchUppercase,
+  BoldFont={* Bold},
+]
+
+% If there are problems in Hangul Font setup code,
+% run the following line to update your cache:
+%   $ fc-cache -fv
+%
+% Note that on Windows, by default, the user-specific font
+% directory (i.e. %LOCALAPPDATA%\Microsoft\Windows\Fonts\)
+% is not picked up by fc-cache. Either add this directory
+% manually or install the font for all users (C:\Windows\Fonts)
+% as administrator using the right-click menu.
+%
+% Or, you can load fonts by their filenames, e.g.,
+%
+%\setmainhangulfont{KoPubWorldBatang_Pro}[
+%  Scale = MatchUppercase,
+%  UprightFont = {KoPubWorld Batang_Pro Light.otf}, % Exact filename
+%  BoldFont = {KoPubWorld Batang_Pro Bold.otf},     % Exact filename
+%  AutoFakeSlant = 0.15
+%]
+%\setsanshangulfont{KoPubWorldDotum_Pro}[
+%  Scale = MatchUppercase,
+%  UprightFont = {KoPubWorld Dotum_Pro Medium.otf}, % Exact filename (or Light)
+%  BoldFont = {KoPubWorld Dotum_Pro Bold.otf}       % Exact filename
+%]
+
+% Metadata
+\title{2025 한국 언어조사 보고서}
+\author{서울대학교 인문대학 언어학과}
+\date{2025학년도 2학기}
+\printdate{2025년 12월 8일}
+\issuedate{2025년 12월 8일}
+\tel{(02) 880-6163, 6164}
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\include{introduction}
+
+\include{region-and-language}
+
+\mainmatter
+\include{preparation}
+
+\include{process}
+
+\include{improvements}
+
+\include{reflection-and-photos}
+
+\appendix
+\include{vocabulary-and-grammar}
+
+\include{file-list}
+
+\include{transcription}
+
+\backmatter
+\makebackcover
+
+\end{document}
