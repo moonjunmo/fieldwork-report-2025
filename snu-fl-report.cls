@@ -164,3 +164,22 @@
     \vfill
   \end{center}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Transcription %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NewDocumentCommand \Tr { mmmm } {
+  \noindent{%
+    \linespread{1.1}\selectfont
+    \begin{minipage}[t]{40pt}
+    \textbf{#1}\\(#2)
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{\dimexpr\linewidth-40pt\relax}
+    #3\tl_if_blank:nF {#4}
+      { \par\vspace{0.4em}#4 }
+    \end{minipage}
+  }%
+  \par\vspace{0.8em}
+}
