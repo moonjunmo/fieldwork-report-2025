@@ -62,16 +62,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Chapter style configuration %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makechapterstyle{customchap}{
-  % Numbering style
-  \renewcommand{\thechapter}{\Roman{chapter}}
-  \renewcommand{\chapterheadstart}{
-    \ifnum\value{chapter}=2
-      \renewcommand{\thesection}{\arabic{section}.}
-    \else
-      \renewcommand{\thesection}{\Alph{section}.}
-    \fi
-  }
-
   % Section/subsection font
   \setsecheadstyle{\fontsize{12pt}{14pt}\selectfont\sffamily\bfseries\raggedright}
   \setsubsecheadstyle{\fontsize{10pt}{11pt}\selectfont\sffamily\bfseries\raggedright}
@@ -85,6 +75,10 @@
   \setlength{\afterchapskip}{40pt}
 }
 \chapterstyle{customchap}
+
+% Section style
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
+\setsecnumformat{\csname the#1\endcsname\space}
 
 \setsecnumdepth{section}
 
