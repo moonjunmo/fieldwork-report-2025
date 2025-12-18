@@ -128,12 +128,12 @@
   \thispagestyle{empty}
   \begin{center}
     \vspace*{1cm}
-    \rule{300pt}{3pt}
+    \rule{333pt}{3pt}
     \par\vspace{-0.8\baselineskip}
     \fontsize{28pt}{30pt}\selectfont\sffamily\bfseries
     \@title
     \par\vspace{-0.6\baselineskip}
-    \rule{300pt}{3pt}
+    \rule{333pt}{3pt}
     \vfill
     \fontsize{20pt}{22pt}\selectfont\sffamily\bfseries
     \@author \\
