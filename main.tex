@@ -1,8 +1,12 @@
 % !TEX root = main.tex
 \documentclass{snu-fl-report}
 
+% Set \internaltrue if private, \internalfalse otherwise
+\newif\ifinternal
+\internaltrue
+
 % Use `\includeonly` to compile partially, e.g.,
-\includeonly{transcription}
+\includeonly{transcription, private/transcription}
 
 % Hangul font setup
 \setmainhangulfont{KoPubWorldBatang_Pro}[
@@ -84,7 +88,11 @@
 
 \include{file-list}
 
-\include{transcription}
+\ifinternal
+  \include{private/transcription}
+\else
+  \include{transcription}
+\fi
 
 \backmatter
 \makecolophon
