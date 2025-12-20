@@ -22,7 +22,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions*
-\LoadClass[b5paper,10pt,left,openany]{memoir}
+\LoadClass[a4paper,10pt,left,openany]{memoir}
 
 \DoubleSpacing
 \setlength{\parindent}{10pt}
@@ -55,33 +55,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlrmarginsandblock{2cm}{2cm}{*}
 \setulmarginsandblock{2cm}{2cm}{*}
-\setheadfoot{0.5cm}{0.5cm}
+\setheadfoot{0.5cm}{1cm}
 \checkandfixthelayout
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%% Chapter style configuration %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makechapterstyle{customchap}{
-  % Section/subsection font
-  \setsecheadstyle{\fontsize{12pt}{14pt}\selectfont\sffamily\bfseries\raggedright}
-  \setsubsecheadstyle{\fontsize{10pt}{11pt}\selectfont\sffamily\bfseries\raggedright}
+\setsecnumdepth{subsection}
+\headstyles{komalike}
 
+\makechapterstyle{customchap}{
   \renewcommand{\printchaptername}{}
-  \renewcommand{\afterchapternum}{.\space}
-  \renewcommand{\chapnumfont}{\centering\fontsize{16pt}{19pt}\selectfont\sffamily\bfseries}
-  \renewcommand{\chaptitlefont}{\centering\fontsize{16pt}{19pt}\selectfont\sffamily\bfseries}
+  \renewcommand{\printchapternum}{
+    \chapnumfont
+    \rule[0.2\midchapskip]{1em}{0.4pt}
+    \hspace{5pt} \thechapter \hspace{5pt}
+    \rule[0.2\midchapskip]{1em}{0.4pt}
+  }
+  \renewcommand{\afterchapternum}{\vskip}
+  \renewcommand{\chapnumfont}{\centering\fontsize{14pt}{16pt}\selectfont\sffamily\bfseries}
+  \renewcommand{\chaptitlefont}{\centering\fontsize{20pt}{22pt}\selectfont\sffamily\bfseries}
 
   \setlength{\beforechapskip}{0pt}
-  \setlength{\afterchapskip}{40pt}
 }
 \chapterstyle{customchap}
-
-% Section style
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
-\setsecnumformat{\csname the#1\endcsname\space}
-
-\setsecnumdepth{section}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,14 +87,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\contentsname}{목차}
 \renewcommand*\cftappendixname{부록~}
-\settocdepth{chapter}
+\settocdepth{section}
 
-\copypagestyle{customruled}{plain}
-\makeevenfoot{customruled}{\footnotesize{\thepage{}~|~서울대학교~언어학과}}{}{}
-\makeoddfoot{customruled}{}{}{\footnotesize{한국~언어조사~질문지~|~\thepage}}
-\pagestyle{customruled}
-
-\aliaspagestyle{chapter}{customruled}
+\pagestyle{ruled}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,7 +98,9 @@
 \RequirePackage[
   firstpageonly,
   angle=0,
-  scale=0.75,
+  scale=1.25,
+  hpos=0.8\paperwidth,
+  vpos=0.8\paperheight,
   text={\includegraphics{img/snu-ui-trans.png}}
 ]{draftwatermark}
 
@@ -114,55 +109,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Document metadata fields %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Additional Fields
-\NewDocumentCommand \printdate { m }
-  { \newcommand*\@printdate{#1} }
-
-\NewDocumentCommand \issuedate { m }
-  { \newcommand*\@issuedate{#1} }
+\NewDocumentCommand \course { m }
+  { \newcommand*\@course{#1} }
 
 \NewDocumentCommand \tel { m }
   { \newcommand*\@tel{#1} }
 
-% Front title
+% Title page
 \renewcommand{\maketitle}{
-  \thispagestyle{empty}
-  \begin{center}
-    \vspace*{1cm}
-    \rule{333pt}{3pt}
-    \par\vspace{-0.8\baselineskip}
-    \fontsize{28pt}{30pt}\selectfont\sffamily\bfseries
-    \@title
-    \par\vspace{-0.6\baselineskip}
-    \rule{333pt}{3pt}
-    \vfill
-    \fontsize{20pt}{22pt}\selectfont\sffamily\bfseries
+  \begin{flushleft}
+    \setlength{\leftskip}{1cm}
+    \vspace*{1.75cm}
+    \fontsize{30pt}{32pt}\selectfont\sffamily\bfseries
+    \@title \\
+    \vspace{1cm}
+    \fontsize{17pt}{19pt}\selectfont\sffamily\bfseries
     \@author \\
-    \fontsize{18pt}{20pt}\selectfont\sffamily\mdseries
-    \@date \\
-    \vspace*{2cm} 
-  \end{center}
-  \newpage
+    \fontsize{17pt}{19pt}\selectfont\sffamily\mdseries
+    \@course
+  \end{flushleft}
 }
 
-% Back cover
-\newcommand{\makebackcover}{
+% Colophon page
+\newcommand{\makecolophon}{
   \thispagestyle{empty}
-  \selectfont\sffamily
-  \null\vfill
-  \begin{center}
-    \setlength{\fboxrule}{0.4pt} 
-    \setlength{\fboxsep}{20pt} 
-    \fbox{
-      \begin{tabular}{c}
-        \strut \fontsize{15pt}{17pt}\selectfont\bfseries\@title \strut \\[2.5ex]
-        \strut \fontsize{10pt}{11pt}\selectfont\mdseries\@printdate{}~인쇄 \strut \\
-        \strut \fontsize{10pt}{11pt}\selectfont\mdseries\@printdate{}~발행 \strut \\[2.5ex]
-        \strut 엮은이:~\@author \strut \\
-        \strut 전화:~\@tel \strut
-      \end{tabular}
-    }
-    \vfill
-  \end{center}
+  \vspace*{20cm}
+  \begin{flushleft}
+    \fontsize{15pt}{17pt}\selectfont\sffamily\bfseries
+    \@title \\
+    \vspace{0.5cm}
+    \fontsize{10pt}{11pt}\selectfont\sffamily\mdseries
+    펴낸날~|~\@date \\
+    엮은이~|~\@author \\
+    전 \hspace{8pt} 화~|~\@tel
+  \end{flushleft}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
