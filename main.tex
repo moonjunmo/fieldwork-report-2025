@@ -1,12 +1,8 @@
 % !TEX root = main.tex
 \documentclass{snu-fl-report}
 
-% Set \internaltrue if private, \internalfalse otherwise
-\newif\ifinternal
-\internaltrue
-
 % Use `\includeonly` to compile partially, e.g.,
-\includeonly{chapters/c-transcription, private/c-transcription}
+\includeonly{transcription}
 
 % Hangul font setup
 \setmainhangulfont{KoPubWorldBatang_Pro}[
@@ -49,63 +45,39 @@
 % Metadata
 \title{2025년 벌교 지역어 조사 보고서}
 \author{서울대학교 인문대학 언어학과}
-\course{2025학년도 2학기 `언어조사 및 분석'}
-\date{2025년 12월 22일}
+\date{2025학년도 2학기 `언어조사 및 분석'}
+\printdate{2025년 12월 22일}
+\issuedate{2025년 12월 22일}
 \tel{(02) 880-6163, 6164}
 
 
 \begin{document}
 
 \frontmatter
-\begin{titlingpage}
-  \maketitle
-  \vfill
-  \begin{flushleft}
-    \setlength{\leftskip}{1cm}
-    \fontsize{14pt}{14pt}\selectfont\sffamily\mdseries
-    문준모 \\ 박준영 \\ 유승민 \\ 이상인 \\ 이채현 \\ 전지민 \\
-  \end{flushleft}
-  \hspace*{1.75cm}
-\end{titlingpage}
-
+\maketitle
 \tableofcontents
 
-% 0. Abstract
-\include{chapters/0-abstract}
+\include{introduction}
 
 \mainmatter
+\include{region-and-language}
 
-% 1. Region & Language
-\include{chapters/1-region-and-language}
+\include{preparation}
 
-% 2. Fieldwork Preparation
-\include{chapters/2-preparation}
+\include{process}
 
-% 3. Fieldwork Process & Results
-\include{chapters/3-process}
+\include{improvements}
 
-% 4. Improvements
-\include{chapters/4-improvements}
-
-% 5. Reflection and Photos
-\include{chapters/5-reflection-and-photos}
+\include{reflection-and-photos}
 
 \appendix
+\include{vocabulary-and-grammar}
 
-% A. Vocabulary and Grammar
-\include{chapters/a-vocabulary-and-grammar}
+\include{file-list}
 
-% B. File List
-\include{chapters/b-file-list}
-
-% C. Transcription
-\ifinternal
-  \include{private/c-transcription}
-\else
-  \include{chapters/c-transcription}
-\fi
+\include{transcription}
 
 \backmatter
-\makecolophon
+\makebackcover
 
 \end{document}
