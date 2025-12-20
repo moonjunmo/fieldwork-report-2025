@@ -6,7 +6,7 @@
 \internaltrue
 
 % Use `\includeonly` to compile partially, e.g.,
-\includeonly{transcription, private/transcription}
+\includeonly{chapters/c-transcription, private/c-transcription}
 
 % Hangul font setup
 \setmainhangulfont{KoPubWorldBatang_Pro}[
@@ -70,28 +70,39 @@
 
 \tableofcontents
 
-\include{introduction}
+% 0. Abstract
+\include{chapters/0-abstract}
 
 \mainmatter
-\include{region-and-language}
 
-\include{preparation}
+% 1. Region & Language
+\include{chapters/1-region-and-language}
 
-\include{process}
+% 2. Fieldwork Preparation
+\include{chapters/2-preparation}
 
-\include{improvements}
+% 3. Fieldwork Process & Results
+\include{chapters/3-process}
 
-\include{reflection-and-photos}
+% 4. Improvements
+\include{chapters/4-improvements}
+
+% 5. Reflection and Photos
+\include{chapters/5-reflection-and-photos}
 
 \appendix
-\include{vocabulary-and-grammar}
 
-\include{file-list}
+% A. Vocabulary and Grammar
+\include{chapters/a-vocabulary-and-grammar}
 
+% B. File List
+\include{chapters/b-file-list}
+
+% C. Transcription
 \ifinternal
-  \include{private/transcription}
+  \include{private/c-transcription}
 \else
-  \include{transcription}
+  \include{chapters/c-transcription}
 \fi
 
 \backmatter
