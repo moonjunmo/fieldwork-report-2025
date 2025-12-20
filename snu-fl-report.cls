@@ -87,7 +87,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\contentsname}{목차}
 \renewcommand*\cftappendixname{부록~}
-\settocdepth{chapter}
+\settocdepth{section}
 
 \pagestyle{ruled}
 
