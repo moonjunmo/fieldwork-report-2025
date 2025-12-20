@@ -91,12 +91,7 @@
 \renewcommand*\cftappendixname{부록~}
 \settocdepth{chapter}
 
-\copypagestyle{customruled}{plain}
-\makeevenfoot{customruled}{\footnotesize{\thepage{}~|~서울대학교~언어학과}}{}{}
-\makeoddfoot{customruled}{}{}{\footnotesize{한국~언어조사~질문지~|~\thepage}}
-\pagestyle{customruled}
-
-\aliaspagestyle{chapter}{customruled}
+\pagestyle{ruled}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
