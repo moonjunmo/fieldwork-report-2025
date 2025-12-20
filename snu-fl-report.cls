@@ -62,26 +62,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%% Chapter style configuration %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makechapterstyle{customchap}{
-  % Section/subsection font
-  \setsecheadstyle{\fontsize{12pt}{14pt}\selectfont\sffamily\bfseries\raggedright}
-  \setsubsecheadstyle{\fontsize{10pt}{11pt}\selectfont\sffamily\bfseries\raggedright}
+\setsecnumdepth{subsection}
+\headstyles{komalike}
 
+\makechapterstyle{customchap}{
   \renewcommand{\printchaptername}{}
-  \renewcommand{\afterchapternum}{.\space}
-  \renewcommand{\chapnumfont}{\centering\fontsize{16pt}{19pt}\selectfont\sffamily\bfseries}
-  \renewcommand{\chaptitlefont}{\centering\fontsize{16pt}{19pt}\selectfont\sffamily\bfseries}
+  \renewcommand{\printchapternum}{
+    \chapnumfont
+    \rule[0.2\midchapskip]{1em}{0.4pt}
+    \hspace{5pt} \thechapter \hspace{5pt}
+    \rule[0.2\midchapskip]{1em}{0.4pt}
+  }
+  \renewcommand{\afterchapternum}{\vskip}
+  \renewcommand{\chapnumfont}{\centering\fontsize{14pt}{16pt}\selectfont\sffamily\bfseries}
+  \renewcommand{\chaptitlefont}{\centering\fontsize{20pt}{22pt}\selectfont\sffamily\bfseries}
 
   \setlength{\beforechapskip}{0pt}
-  \setlength{\afterchapskip}{40pt}
 }
 \chapterstyle{customchap}
-
-% Section style
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
-\setsecnumformat{\csname the#1\endcsname\space}
-
-\setsecnumdepth{section}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
