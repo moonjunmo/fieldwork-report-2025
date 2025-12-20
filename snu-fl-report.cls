@@ -22,7 +22,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions*
-\LoadClass[b5paper,10pt,left,openany]{memoir}
+\LoadClass[a4paper,10pt,left,openany]{memoir}
 
 \DoubleSpacing
 \setlength{\parindent}{10pt}
