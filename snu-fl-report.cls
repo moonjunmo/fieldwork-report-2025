@@ -159,7 +159,7 @@
     엮은이~|~\@author \\
     전 \hspace{8pt} 화~|~\@tel \\
     \mbox{} \\
-    이~보고서는~\LaTeX{}으로~조판되었습니다.~소스~코드는~깃허브~저장소~\href{https \c_colon_str //github.com/moonjunmo/fieldwork-report-2025}{moonjunmo/fieldwork-report-2025}에~있습니다.
+    이~보고서는~\LaTeX{}으로~조판되었습니다.~소스~코드는~GitHub~저장소~\href{https \c_colon_str //github.com/moonjunmo/fieldwork-report-2025}{moonjunmo/fieldwork-report-2025}에~있습니다.
   \end{flushleft}
 }
 
