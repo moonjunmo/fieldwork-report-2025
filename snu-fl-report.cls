@@ -41,6 +41,7 @@
 
 \RequirePackage{indentfirst}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Font setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,6 +109,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Document metadata fields %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://github.com/latex3/hyperref/issues/242#issuecomment-1149845979
+\AddToHook {begindocument/before} {
+  \hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={red!73!black},
+    urlcolor={blue!60!black},
+
+    pdflang = { ko },
+    pdfsubject = { 지역어~조사~보고서 }
+  }
+}
+
 % Additional Fields
 \NewDocumentCommand \course { m }
   { \newcommand*\@course{#1} }
@@ -133,7 +147,7 @@
 % Colophon page
 \newcommand{\makecolophon}{
   \thispagestyle{empty}
-  \vspace*{20cm}
+  \vspace*{19cm}
   \begin{flushleft}
     \fontsize{15pt}{17pt}\selectfont\sffamily\bfseries
     \@title \\
@@ -141,14 +155,16 @@
     \fontsize{10pt}{11pt}\selectfont\sffamily\mdseries
     펴낸날~|~\@date \\
     엮은이~|~\@author \\
-    전 \hspace{8pt} 화~|~\@tel
+    전 \hspace{8pt} 화~|~\@tel \\
+    \mbox{} \\
+    이~보고서는~\LaTeX{}으로~조판되었습니다.~소스~코드는~깃허브~저장소~\href{https \c_colon_str //github.com/moonjunmo/fieldwork-report-2025}{moonjunmo/fieldwork-report-2025}에~있습니다.
   \end{flushleft}
 }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Transcription %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \NewDocumentCommand \Tr { mmmm } {
   \noindent{%
     \linespread{1.1}\selectfont

@@ -1,6 +1,8 @@
 % !TEX root = main.tex
 \documentclass{snu-fl-report}
 
+\usepackage[pdfusetitle]{hyperref}
+
 % Set \internaltrue if private, \internalfalse otherwise
 \newif\ifinternal
 \internaltrue
@@ -91,7 +93,6 @@
 \include{chapters/5-reflection-and-photos}
 
 \appendix
-
 % A. Vocabulary and Grammar
 \include{chapters/a-vocabulary-and-grammar}
 
@@ -106,6 +107,13 @@
 \fi
 
 \backmatter
+% Acknowledgement
+\chapter*{감사의 말}
+\addcontentsline{toc}{chapter}{감사의 말}
+성공적인 언어조사를 수행할 수 있도록 가르쳐 주고 이끌어 주신 최계영 선생님께 깊은 감사의 말씀을 드립니다.
+
+% Colophon
+\newpage
 \makecolophon
 
 \end{document}
