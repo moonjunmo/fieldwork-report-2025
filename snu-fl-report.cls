@@ -101,7 +101,7 @@
   scale=1.25,
   hpos=0.8\paperwidth,
   vpos=0.8\paperheight,
-  text={\includegraphics{img/snu-ui-trans.png}}
+  text={\includegraphics{images/snu-ui-trans.png}}
 ]{draftwatermark}
 
 
