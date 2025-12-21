@@ -38,8 +38,10 @@
 
 \RequirePackage{tabularray}
 \UseTblrLibrary{booktabs}
+\UseTblrLibrary{diagbox}
 
 \RequirePackage{indentfirst}
+\RequirePackage{caption}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
