@@ -165,8 +165,25 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Transcription %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentCommand \Vocab { mmmm } {
+  \noindent{%
+    \linespread{1.1}\selectfont
+    \begin{minipage}[t]{5cm}
+      \tl_if_blank:nTF {#1} { \textbf{추가~어휘}\\ } { \textbf{#1} \\ } #2
+    \end{minipage}%
+    \begin{minipage}[t]{6cm}
+      #3
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{6cm}
+      #4
+    \end{minipage}
+  }%
+  \par\vspace{0.8em}
+}
+
 \NewDocumentCommand \Tr { mmmm } {
   \noindent{%
     \linespread{1.1}\selectfont
