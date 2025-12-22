@@ -39,6 +39,7 @@
 \RequirePackage{tabularray}
 \UseTblrLibrary{booktabs}
 \UseTblrLibrary{diagbox}
+\DefTblrTemplate{firsthead, middlehead, lasthead, contfoot-text, capcont}{default}{}
 
 \RequirePackage{indentfirst}
 \RequirePackage{caption}
