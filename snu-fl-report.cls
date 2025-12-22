@@ -171,7 +171,7 @@
   \noindent{%
     \linespread{1.1}\selectfont
     \begin{minipage}[t]{40pt}
-    \textbf{#1}\\(#2)
+    \tl_if_blank:nF {#1} { \textbf{#1} \\ }(#2)
     \end{minipage}%
     \hfill
     \begin{minipage}[t]{\dimexpr\linewidth-40pt\relax}
